@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="clapperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dc2626" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+  <rect width="504" height="504" x="4" y="4" rx="108" fill="none" stroke="#38bdf8" stroke-width="6" stroke-opacity="0.3" />
+
+  <!-- Film Clapperboard Body -->
+  <rect x="76" y="160" width="360" height="260" rx="28" fill="#1e293b" stroke="#475569" stroke-width="8" />
+
+  <!-- Film Board Top Slats -->
+  <g transform="rotate(-8 76 160)">
+    <rect x="70" y="90" width="370" height="65" rx="14" fill="#0f172a" stroke="#cbd5e1" stroke-width="6" />
+    <!-- White Stripes -->
+    <polygon points="120,92 160,92 120,153 80,153" fill="#f8fafc" />
+    <polygon points="210,92 250,92 210,153 170,153" fill="#f8fafc" />
+    <polygon points="300,92 340,92 300,153 260,153" fill="#f8fafc" />
+    <polygon points="390,92 430,92 390,153 350,153" fill="#f8fafc" />
+  </g>
+
+  <!-- Traffic Lights in Center -->
+  <rect x="130" y="210" width="252" height="96" rx="24" fill="#090d16" stroke="#334155" stroke-width="5" />
+  <!-- Red Light (Glowing) -->
+  <circle cx="174" cy="258" r="32" fill="#ef4444" filter="url(#glow)" />
+  <circle cx="174" cy="258" r="16" fill="#fca5a5" />
+  <!-- Yellow Light -->
+  <circle cx="256" cy="258" r="28" fill="#eab308" opacity="0.9" />
+  <circle cx="256" cy="258" r="14" fill="#fef08a" opacity="0.9" />
+  <!-- Green Light -->
+  <circle cx="338" cy="258" r="28" fill="#22c55e" opacity="0.8" />
+  <circle cx="338" cy="258" r="14" fill="#86efac" opacity="0.8" />
+
+  <!-- Clapperboard Info Text Lines -->
+  <text x="130" y="345" font-family="system-ui, sans-serif" font-weight="900" font-size="22" fill="#38bdf8" letter-spacing="2">TRAFFIC STUDIO</text>
+  <text x="130" y="380" font-family="monospace" font-size="16" fill="#94a3b8">SCENE: 01 | TAKE: 01 | 4K</text>
+</svg>

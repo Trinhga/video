@@ -1,0 +1,21 @@
+{
+  "id": "/",
+  "name": "Xưởng Phim & Kịch Bản Giao Thông AI",
+  "short_name": "Xưởng Phim",
+  "description": "Xưởng biên kịch video an toàn giao thông, bảng phân cảnh điện ảnh & máy nhắc chữ Teleprompter.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#020617",
+  "background_color": "#020617",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["productivity", "entertainment", "education"]
+}
