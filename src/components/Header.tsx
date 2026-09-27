@@ -11,7 +11,7 @@ import {
   Sparkles 
 } from 'lucide-react';
 
-export type MainTabType = 'scripts' | 'teleprompter' | 'generator' | 'eight_sec' | 'production' | 'simulation';
+export type MainTabType = 'generator' | 'scripts' | 'camera_angles' | 'eight_sec' | 'video_export' | 'teleprompter' | 'production' | 'simulation';
 
 interface HeaderProps {
   activeTab: MainTabType;
@@ -39,12 +39,20 @@ export const Header: React.FC<HeaderProps> = ({
               <h1 className="text-lg font-black tracking-tight text-white uppercase">
                 XƯỞNG BIÊN KỊCH ĐIỆN ẢNH & VIDEO AI
               </h1>
-              <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                Đa Thể Loại • Phân Đoạn 8s AI
+              <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                Quy Trình 5 Bước Chuẩn Điện Ảnh
               </span>
             </div>
-            <p className="text-xs text-slate-400">
-              Kịch bản chuẩn điện ảnh (Sci-Fi, TVC, Drama, Trinh thám, An toàn...) • Phân rã 8s Runway/Kling/Sora • Nhận diện nhân vật đồng nhất
+            <p className="text-xs text-slate-400 flex items-center gap-1.5 flex-wrap">
+              <span className="text-blue-400 font-bold">1. Kịch bản</span>
+              <span className="text-slate-600">➔</span>
+              <span className="text-indigo-400 font-bold">2. Phân cảnh</span>
+              <span className="text-slate-600">➔</span>
+              <span className="text-amber-400 font-bold">3. Góc máy</span>
+              <span className="text-slate-600">➔</span>
+              <span className="text-purple-400 font-bold">4. Prompt</span>
+              <span className="text-slate-600">➔</span>
+              <span className="text-rose-400 font-bold">5. Video</span>
             </p>
           </div>
         </div>
@@ -73,85 +81,101 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      {/* Navigation Tabs */}
-      <div className="bg-slate-950/70 border-t border-slate-800/60 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto flex items-center gap-1 sm:gap-2 overflow-x-auto py-1.5 scrollbar-none text-xs sm:text-sm font-medium">
+      {/* Navigation Tabs - STRICT 5-STEP WORKFLOW: Kịch bản -> Phân cảnh -> Góc máy -> Prompt -> Video */}
+      <div className="bg-slate-950/80 border-t border-slate-800/80 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto flex items-center gap-1.5 sm:gap-2 overflow-x-auto py-2 scrollbar-none text-xs sm:text-sm font-medium">
+          
+          {/* Bước 1: KỊCH BẢN */}
           <button
             id="nav-tab-generator"
             onClick={() => setActiveTab('generator')}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg transition-all whitespace-nowrap ${
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-xl transition-all whitespace-nowrap cursor-pointer ${
               activeTab === 'generator'
-                ? 'bg-blue-600 text-white shadow-sm font-bold ring-2 ring-blue-400/30'
-                : 'text-amber-300 hover:text-white bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 font-semibold'
+                ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30 font-black ring-2 ring-blue-400/40'
+                : 'text-blue-300 hover:text-white bg-blue-950/30 hover:bg-blue-900/40 border border-blue-800/40 font-semibold'
             }`}
           >
-            <Clapperboard className="w-4 h-4 text-amber-400" />
-            <span>🎬 Xưởng Phim AI (Nhập Chủ Đề)</span>
+            <span className="w-5 h-5 rounded-full bg-blue-500/20 border border-blue-400/40 text-[11px] font-black flex items-center justify-center text-blue-200">
+              1
+            </span>
+            <Clapperboard className="w-4 h-4 text-blue-300" />
+            <span>Kịch Bản (Ý Tưởng & Cốt Truyện)</span>
           </button>
 
+          <span className="text-slate-600 hidden sm:inline select-none">➔</span>
+
+          {/* Bước 2: PHÂN CẢNH */}
           <button
             id="nav-tab-scripts"
             onClick={() => setActiveTab('scripts')}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg transition-all whitespace-nowrap ${
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-xl transition-all whitespace-nowrap cursor-pointer ${
               activeTab === 'scripts'
-                ? 'bg-blue-600 text-white shadow-sm font-bold'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+                ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 font-black ring-2 ring-indigo-400/40'
+                : 'text-indigo-300 hover:text-white bg-indigo-950/30 hover:bg-indigo-900/40 border border-indigo-800/40 font-semibold'
             }`}
           >
-            <Film className="w-4 h-4" />
-            <span>Kịch Bản Chi Tiết (Shot-by-Shot)</span>
+            <span className="w-5 h-5 rounded-full bg-indigo-500/20 border border-indigo-400/40 text-[11px] font-black flex items-center justify-center text-indigo-200">
+              2
+            </span>
+            <Film className="w-4 h-4 text-indigo-300" />
+            <span>Phân Cảnh (Shot-by-Shot)</span>
           </button>
 
+          <span className="text-slate-600 hidden sm:inline select-none">➔</span>
+
+          {/* Bước 3: GÓC MÁY */}
+          <button
+            id="nav-tab-camera-angles"
+            onClick={() => setActiveTab('camera_angles')}
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-xl transition-all whitespace-nowrap cursor-pointer ${
+              activeTab === 'camera_angles'
+                ? 'bg-amber-600 text-white shadow-lg shadow-amber-600/30 font-black ring-2 ring-amber-400/40'
+                : 'text-amber-300 hover:text-white bg-amber-950/30 hover:bg-amber-900/40 border border-amber-800/40 font-semibold'
+            }`}
+          >
+            <span className="w-5 h-5 rounded-full bg-amber-500/20 border border-amber-400/40 text-[11px] font-black flex items-center justify-center text-amber-200">
+              3
+            </span>
+            <Eye className="w-4 h-4 text-amber-300" />
+            <span>Góc Máy & Tiêu Cự (Blocking)</span>
+          </button>
+
+          <span className="text-slate-600 hidden sm:inline select-none">➔</span>
+
+          {/* Bước 4: PROMPT */}
           <button
             id="nav-tab-eight-sec"
             onClick={() => setActiveTab('eight_sec')}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg transition-all whitespace-nowrap ${
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-xl transition-all whitespace-nowrap cursor-pointer ${
               activeTab === 'eight_sec'
-                ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md font-bold ring-2 ring-indigo-400/40'
-                : 'text-indigo-300 hover:text-white bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/30 font-semibold'
+                ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30 font-black ring-2 ring-purple-400/40'
+                : 'text-purple-300 hover:text-white bg-purple-950/30 hover:bg-purple-900/40 border border-purple-800/40 font-semibold'
             }`}
           >
-            <Sparkles className="w-4 h-4 text-amber-400" />
-            <span>🎬 Phân Đoạn 8s & Prompts Video AI</span>
+            <span className="w-5 h-5 rounded-full bg-purple-500/20 border border-purple-400/40 text-[11px] font-black flex items-center justify-center text-purple-200">
+              4
+            </span>
+            <Sparkles className="w-4 h-4 text-purple-300" />
+            <span>Prompt Video AI (8s Clips)</span>
           </button>
 
-          <button
-            id="nav-tab-teleprompter"
-            onClick={() => setActiveTab('teleprompter')}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg transition-all whitespace-nowrap ${
-              activeTab === 'teleprompter'
-                ? 'bg-blue-600 text-white shadow-sm font-bold'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
-            }`}
-          >
-            <Tv className="w-4 h-4" />
-            <span>Máy Nhắc Chữ & Đọc Thử</span>
-          </button>
+          <span className="text-slate-600 hidden sm:inline select-none">➔</span>
 
+          {/* Bước 5: VIDEO */}
           <button
-            id="nav-tab-production"
-            onClick={() => setActiveTab('production')}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg transition-all whitespace-nowrap ${
-              activeTab === 'production'
-                ? 'bg-blue-600 text-white shadow-sm font-bold'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+            id="nav-tab-video-export"
+            onClick={() => setActiveTab('video_export')}
+            className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all whitespace-nowrap cursor-pointer ${
+              activeTab === 'video_export'
+                ? 'bg-gradient-to-r from-red-600 via-rose-600 to-amber-600 text-white shadow-lg shadow-red-600/40 font-black ring-2 ring-red-400/50'
+                : 'text-rose-300 hover:text-white bg-rose-950/30 hover:bg-rose-900/40 border border-rose-800/40 font-bold'
             }`}
           >
-            <FileCheck className="w-4 h-4" />
-            <span>Checklist Đạo Diễn & Quay Phim</span>
-          </button>
-
-          <button
-            id="nav-tab-simulation"
-            onClick={() => setActiveTab('simulation')}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg transition-all whitespace-nowrap ${
-              activeTab === 'simulation'
-                ? 'bg-blue-600 text-white shadow-sm font-bold'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
-            }`}
-          >
-            <Eye className="w-4 h-4" />
-            <span>Sa Bàn Mô Phỏng Góc Máy Nút Giao</span>
+            <span className="w-5 h-5 rounded-full bg-rose-500/20 border border-rose-400/40 text-[11px] font-black flex items-center justify-center text-rose-200">
+              5
+            </span>
+            <Video className="w-4 h-4 text-rose-300" />
+            <span>Video & Lồng Tiếng (Xuất Bản)</span>
           </button>
         </div>
       </div>

@@ -11,11 +11,13 @@ import { ProjectManagerBar } from './components/ProjectManagerBar';
 import { ScriptViewer } from './components/ScriptViewer';
 import { ScriptTeleprompter } from './components/ScriptTeleprompter';
 import { ScriptGenerator } from './components/ScriptGenerator';
+import { CameraAngleStudio } from './components/CameraAngleStudio';
 import { EightSecondStudio } from './components/EightSecondStudio';
 import { ProductionChecklist } from './components/ProductionChecklist';
 import { IntersectionSimulation } from './components/IntersectionSimulation';
 import { DriverHUD } from './components/DriverHUD';
 import { DesktopExportModal } from './components/DesktopExportModal';
+import { VideoExportStudio } from './components/VideoExportStudio';
 import { 
   Vehicle, 
   TrafficLightState, 
@@ -157,12 +159,16 @@ export default function App() {
 
   const handleOpenTeleprompterWithScript = (newScript: VideoScript) => {
     handleScriptGenerated(newScript);
-    setActiveTab('teleprompter');
+    setActiveTab('video_export');
   };
 
   const handleOpenEightSecondStudioWithScript = (newScript: VideoScript) => {
     handleScriptGenerated(newScript);
     setActiveTab('eight_sec');
+  };
+
+  const handleUpdateScript = (updatedScript: VideoScript) => {
+    handleScriptGenerated(updatedScript);
   };
 
   // State for Intersection Simulation reference
@@ -224,7 +230,7 @@ export default function App() {
           lastSavedTime={lastSavedTime}
         />
 
-        {/* Tab 1: Custom Script Generator (XƯỞNG PHIM AI) - Persistent DOM to preserve typed text */}
+        {/* Bước 1: Kịch Bản (XƯỞNG PHIM AI) */}
         <div style={{ display: activeTab === 'generator' ? 'block' : 'none' }}>
           <ScriptGenerator
             key={activeProject.id}
@@ -245,11 +251,15 @@ export default function App() {
           />
         </div>
 
-        {/* Tab 2: Script Viewer with Shot-by-Shot, Dialogues, and Voiceover */}
+        {/* Bước 2: Phân Cảnh (Shot-by-Shot, Lời thoại, Voiceover) */}
         <div style={{ display: activeTab === 'scripts' ? 'block' : 'none' }}>
           <ScriptViewer
             script={activeProject.script}
-            onOpenTeleprompter={() => setActiveTab('teleprompter')}
+            projectName={activeProject.name}
+            onUpdateScript={handleUpdateScript}
+            onBackToGenerator={() => setActiveTab('generator')}
+            onOpenCameraAngles={() => setActiveTab('camera_angles')}
+            onOpenTeleprompter={() => setActiveTab('video_export')}
             onOpenEightSecondStudio={() => setActiveTab('eight_sec')}
             onSelectAnotherScript={(id) => {
               const found = CURATED_SCRIPTS.find((s) => s.id === id);
@@ -257,77 +267,39 @@ export default function App() {
                 handleScriptGenerated(found);
               }
             }}
-            allScripts={combinedScripts}
+            allScripts={CURATED_SCRIPTS}
           />
         </div>
 
-        {/* Tab 3: 8-Second AI Video Clips Studio & Character Consistency Bible */}
+        {/* Bước 3: Góc Máy (Studio Đặt Góc Máy & Tiêu Cự Đạo Diễn) */}
+        <div style={{ display: activeTab === 'camera_angles' || activeTab === 'simulation' ? 'block' : 'none' }}>
+          <CameraAngleStudio
+            script={activeProject.script}
+            onUpdateScript={handleUpdateScript}
+            onNavigateToPrompts={() => setActiveTab('eight_sec')}
+            onNavigateToVideo={() => setActiveTab('video_export')}
+          />
+        </div>
+
+        {/* Bước 4: Prompt (Phân Đoạn 8s & Prompts Video AI) */}
         <div style={{ display: activeTab === 'eight_sec' ? 'block' : 'none' }}>
           <EightSecondStudio
             script={activeProject.script}
-            onOpenTeleprompter={() => setActiveTab('teleprompter')}
+            onUpdateScript={handleUpdateScript}
+            onOpenTeleprompter={() => setActiveTab('video_export')}
+            onNavigateToVideo={() => setActiveTab('video_export')}
+            onNavigateToCameraAngles={() => setActiveTab('camera_angles')}
           />
         </div>
 
-        {/* Tab 4: Teleprompter & Live Voiceover Audio Reader */}
-        <div style={{ display: activeTab === 'teleprompter' ? 'block' : 'none' }}>
-          <ScriptTeleprompter
+        {/* Bước 5: Video (Kết Xuất Video, Lồng Tiếng Voiceover & Xuất Bản) */}
+        <div style={{ display: activeTab === 'video_export' || activeTab === 'teleprompter' ? 'block' : 'none' }}>
+          <VideoExportStudio
             script={activeProject.script}
-            onClose={() => setActiveTab('scripts')}
+            onUpdateScript={handleUpdateScript}
+            onOpenTeleprompter={() => setActiveTab('video_export')}
+            onOpenEightSecondStudio={() => setActiveTab('eight_sec')}
           />
-        </div>
-
-        {/* Tab 5: Production & Filming Checklist */}
-        <div style={{ display: activeTab === 'production' ? 'block' : 'none' }}>
-          <ProductionChecklist />
-        </div>
-
-        {/* Tab 6: Intersection Blocking & Visual Simulation for Director */}
-        <div style={{ display: activeTab === 'simulation' ? 'block' : 'none' }}>
-          <div className="flex flex-col gap-6">
-            <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 text-xs text-slate-300 flex items-center justify-between">
-              <div>
-                <strong className="text-white block text-sm mb-0.5">
-                  Sa Bàn Ngã Tư Mô Phỏng Phối Cảnh & Đặt Góc Máy (Director Blocking)
-                </strong>
-                <span>
-                  Sử dụng sa bàn động dưới đây để hình dung các góc máy: Cận cảnh vạch dừng 7.1, góc máy Flycam toàn cảnh, góc POV camera hành trình và thời điểm đèn chuyển vàng/đỏ.
-                </span>
-              </div>
-            </div>
-
-            <IntersectionSimulation
-              vehicle={simVehicle}
-              trafficLight={trafficLight}
-              isPlaying={isSimPlaying}
-              onTogglePlay={() => setIsSimPlaying(!isSimPlaying)}
-              onReset={() => {
-                setIsSimPlaying(false);
-                setSimVehicle((prev) => ({ ...prev, x: 15, speed: 13.89, isBraking: false }));
-              }}
-              onStep={() => {
-                setSimVehicle((prev) => ({ ...prev, x: Math.min(120, prev.x + 3) }));
-              }}
-              simSpeed={simSpeed}
-              setSimSpeed={setSimSpeed}
-              currentScenario={currentScenario}
-              onSelectScenario={(sc) => setCurrentScenario(sc)}
-              params={INITIAL_PARAMS}
-              onManualBrake={() => setSimVehicle((prev) => ({ ...prev, isBraking: !prev.isBraking }))}
-              onManualAccelerate={() => setSimVehicle((prev) => ({ ...prev, isAccelerating: !prev.isAccelerating }))}
-              onManualLightChange={(color) => setTrafficLight((prev) => ({ ...prev, color, timeRemaining: color === 'yellow' ? 3 : 10 }))}
-              activeEvidence={null}
-              onViewEvidence={() => {}}
-              vmsMessage="GÓC MÁY QUAY: ĐẶT CAMERA HÀNH TRÌNH TẠI GÓC TIẾP CẬN 45 ĐỘ"
-              cameraFlashing={false}
-            />
-
-            <DriverHUD
-              vehicle={simVehicle}
-              trafficLight={trafficLight}
-              stopLineDistance={INITIAL_PARAMS.stopLinePos - simVehicle.x}
-            />
-          </div>
         </div>
       </main>
 

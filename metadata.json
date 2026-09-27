@@ -2,5 +2,7 @@
   "name": "Kịch Bản Cảnh Báo Vi Phạm Vượt Đèn Đỏ",
   "description": "Xưởng phim biên kịch điện ảnh & video AI đa thể loại (Sci-Fi, TVC, Drama, Trinh thám, An toàn giao thông): tự động sinh kịch bản chi tiết, phân rã chuỗi clip 8 giây, hệ thống prompt AI video (Runway Gen-3, Kling, Sora, Midjourney I2V) và bộ khóa nhận diện đồng nhất nhân vật.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

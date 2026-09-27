@@ -319,38 +319,175 @@ export const CURATED_8S_BREAKDOWNS: Record<string, EightSecondBreakdown> = {
         recommendedModel: 'Runway Gen-3 Alpha',
         motionScore: 5,
       },
+      {
+        id: 16,
+        clipNumber: 16,
+        timeRange: '02:00 - 02:08',
+        durationSec: 8,
+        sceneReferenceId: 5,
+        title: 'Cán bộ CSGT tuyên truyền quy định dừng xe an toàn',
+        visualAction: 'Trung cận cảnh: Cán bộ CSGT ân cần nhưng nghiêm nghị giải thích quy định đèn vàng và vạch dừng 7.1 cho Tuấn, nhấn mạnh an toàn tính mạng là trên hết.',
+        audioVoiceover: 'Căn cứ Nghị định về trật tự ATGT, việc vượt đèn vàng đèn đỏ bị xử phạt nghiêm minh và trừ điểm giấy phép lái xe.',
+        charactersInvolved: ['Chiến sĩ CSGT', 'Tuấn (28 tuổi)'],
+        cameraMovement: 'Subtle slow dolly push-in on police officer communicating with professional empathy',
+        lightingMood: 'Clear morning daylight, high-definition street background',
+        englishVideoPrompt: 'Cinematic medium shot: [Vietnamese traffic police officer in standard beige uniform with fluorescent reflective vest and white gloves] explaining traffic safety regulations to [Nguyen Tuan, a 28-year-old Vietnamese male, sharp jawline, short side-part black hair, wearing navy blue windbreaker jacket over grey t-shirt] on street roadside. Respectful educational dialogue, photorealistic 35mm, 4k 24fps.',
+        vietnamesePrompt: 'Trung cảnh điện ảnh: Chiến sĩ CSGT nghiêm túc hướng dẫn quy tắc an toàn giao thông cho Tuấn bên lề đường, Tuấn chăm chú lắng nghe với thái độ cầu thị và hối lỗi.',
+        firstFramePromptMidjourney: 'Medium shot of Vietnamese police officer talking to young man driver on city sidewalk, educational atmosphere, natural daylight, 35mm film still --ar 16:9 --style raw --v 6.1',
+        recommendedModel: 'Runway Gen-3 Alpha',
+        motionScore: 4,
+      },
+      {
+        id: 17,
+        clipNumber: 17,
+        timeRange: '02:08 - 02:16',
+        durationSec: 8,
+        sceneReferenceId: 5,
+        title: 'Chị Mai vuốt tóc con gái và nụ cười nhẹ nhõm trở lại',
+        visualAction: 'Cận cảnh ấm áp: Chị Mai quỳ xuống vuốt nhẹ mái tóc con gái nhỏ, lau vệt nước mắt cho bé. Bé gái mỉm cười ôm cổ mẹ, xua tan nỗi kinh hoàng ban nãy.',
+        audioVoiceover: 'Nhưng món quà vô giá nhất sau buổi sáng hôm nay là nụ cười của con trẻ vẫn được giữ trọn vẹn.',
+        charactersInvolved: ['Chị Mai & Con Gái'],
+        cameraMovement: 'Gentle handheld close-up capturing tender emotional interaction between mother and child',
+        lightingMood: 'Warm soft morning glow, gentle bokeh background',
+        englishVideoPrompt: 'Heartwarming close-up shot: [Vietnamese mother Mai, 35yo woman in floral UV sun jacket and white helmet] gently wiping away a tear from her 6-year-old daughter face, then the little girl smiles brightly and hugs her mother tightly. Tender maternal warmth, photorealistic 35mm lens, 4k.',
+        vietnamesePrompt: 'Cận cảnh giàu cảm xúc: Chị Mai lau nhẹ giọt nước mắt cho con gái nhỏ, bé gái mỉm cười ôm cổ mẹ. Khung hình chan chứa tình mẫu tử ấm áp sau khoảnh khắc thót tim.',
+        firstFramePromptMidjourney: 'Tender cinematic close-up of Vietnamese mother comforting and hugging her cute 6yo daughter on street sidewalk, morning sun flare, deep emotion, 35mm photography --ar 16:9 --style raw --v 6.1',
+        recommendedModel: 'Kling 1.5',
+        motionScore: 3,
+      },
+      {
+        id: 18,
+        clipNumber: 18,
+        timeRange: '02:16 - 02:24',
+        durationSec: 8,
+        sceneReferenceId: 5,
+        title: 'Tuấn lặng người nhìn vệt lốp đen in hằn trên mặt đường',
+        visualAction: 'Góc nhìn thấp: Tuấn đứng nhìn xuống vệt phanh đen dài trên đường nhựa chỉ cách vị trí xe máy nửa mét. Anh thở phào nhẹ nhõm nhận ra mình vừa được trao cơ hội thứ hai.',
+        audioVoiceover: 'Chỉ một quyết định chậm lại 3 giây, bạn đã bảo vệ không chỉ chính mình mà còn cả hạnh phúc của một gia đình.',
+        charactersInvolved: ['Tuấn (28 tuổi)'],
+        cameraMovement: 'Tilt up from black tire skid mark on road surface to Tuan contemplative face',
+        lightingMood: 'Dramatic sunlight reflecting on road texture, emotional depth',
+        englishVideoPrompt: 'Cinematic tilt-up shot from deep black tire skid marks on intersection asphalt up to [Nguyen Tuan, a 28-year-old Vietnamese male, sharp jawline, short side-part black hair, wearing navy blue windbreaker jacket over grey t-shirt] standing quietly with hand over his chest in profound relief and realization. Photorealistic, 4k 24fps.',
+        vietnamesePrompt: 'Góc máy hất lên từ vệt lốp xe cháy đen trên mặt đường nhựa đến gương mặt Tuấn đang đứng lặng với tay đặt lên ngực, thở phào nhẹ nhõm trước sự may mắn và thức tỉnh sâu sắc.',
+        firstFramePromptMidjourney: 'Cinematic tilt shot from fresh black skid mark on city street up to contemplative young Vietnamese man driver, sunbeam hitting his face, 35mm film --ar 16:9 --style raw --v 6.1',
+        recommendedModel: 'Luma Dream Machine',
+        motionScore: 4,
+      },
+      {
+        id: 19,
+        clipNumber: 19,
+        timeRange: '02:24 - 02:32',
+        durationSec: 8,
+        sceneReferenceId: 6,
+        title: 'Ý thức văn hóa giao thông: Dừng xe ngay ngắn trước vạch 7.1',
+        visualAction: 'Toàn cảnh ngã tư: Các dòng xe máy và ô tô tự giác giảm tốc độ từ xa khi đèn chuyển vàng, dừng lại đều tăm tắp ngay ngắn sau vạch dừng sơn trắng 7.1.',
+        audioVoiceover: 'Văn hóa giao thông được xây dựng từ sự tự giác của mỗi người sau tay lái.',
+        charactersInvolved: [],
+        cameraMovement: 'Smooth lateral jib shot panning across organized vehicles waiting patiently at traffic light',
+        lightingMood: 'Bright clean morning street, vibrant urban colors',
+        englishVideoPrompt: 'Cinematic wide panning shot across an orderly modern Vietnamese intersection: Dozens of scooters and cars braking smoothly and lining up cleanly behind the white painted stop line as the traffic light turns yellow and red. Disciplined civilized traffic flow, 4k 24fps.',
+        vietnamesePrompt: 'Toàn cảnh ngã tư đô thị văn minh: Các phương tiện xe máy và ô tô chủ động giảm tốc và dừng lại ngay ngắn sau vạch dừng màu trắng khi đèn vàng bật sáng. Ý thức chấp hành giao thông mẫu mực.',
+        firstFramePromptMidjourney: 'Cinematic wide angle street photo of modern Hanoi intersection with neat line of motorcycles and cars stopped before white line, clean urban aesthetics --ar 16:9 --style raw --v 6.1',
+        recommendedModel: 'Runway Gen-3 Alpha',
+        motionScore: 5,
+      },
+      {
+        id: 20,
+        clipNumber: 20,
+        timeRange: '02:32 - 02:40',
+        durationSec: 8,
+        sceneReferenceId: 6,
+        title: 'Những bước chân qua đường an toàn và thanh thản',
+        visualAction: 'Góc thấp ngang mặt đường: Những bước chân của người cao tuổi và các em học sinh bước qua vạch kẻ đường cho người đi bộ trong sự nhường đường văn minh của các phương tiện.',
+        audioVoiceover: 'Khi mọi người cùng tuân thủ tín hiệu đèn, mỗi ngã tư đều trở thành điểm tựa của sự an tâm.',
+        charactersInvolved: [],
+        cameraMovement: 'Low angle steady tracking shot alongside pedestrians walking across zebra crossing',
+        lightingMood: 'Golden morning sunshine illuminating crosswalk stripes',
+        englishVideoPrompt: 'Low angle cinematic tracking shot of pedestrians including an elderly grandfather and schoolchildren walking safely across white zebra crossing, cars and scooters patiently waiting behind stop line in soft morning sunlight. Warm communal harmony, 4k.',
+        vietnamesePrompt: 'Góc máy thấp bám theo bước chân người dân và các em nhỏ băng qua vạch sang đường trong sự nhường nhịn văn minh của các dòng xe đang dừng đèn đỏ. Khung cảnh đô thị nhân văn.',
+        firstFramePromptMidjourney: 'Cinematic low angle view of pedestrians crossing street on zebra lines, vehicles stopped peacefully in background, warm daylight, photorealistic --ar 16:9 --style raw --v 6.1',
+        recommendedModel: 'Hailuo Minimax',
+        motionScore: 5,
+      },
+      {
+        id: 21,
+        clipNumber: 21,
+        timeRange: '02:40 - 02:48',
+        durationSec: 8,
+        sceneReferenceId: 6,
+        title: 'Nụ cười và cái gật đầu cảm ơn giữa những người lái xe',
+        visualAction: 'Góc nhìn cận cảnh: Tuấn trong xe mỉm cười gật đầu chào người lái xe bên cạnh khi cùng dừng đèn đỏ. Sự vội vã căng thẳng ban nãy đã hoàn toàn biến mất.',
+        audioVoiceover: 'Bình tĩnh hơn, bao dung hơn. Bởi vì đích đến quan trọng nhất không phải là nhanh hay chậm...',
+        charactersInvolved: ['Tuấn (28 tuổi)'],
+        cameraMovement: 'Medium close-up through car side window with gentle push-in',
+        lightingMood: 'Serene warm sunlight casting soft glow in cabin',
+        englishVideoPrompt: 'Cinematic medium shot through car window: [Nguyen Tuan, a 28-year-old Vietnamese male, sharp jawline, short side-part black hair, wearing navy blue windbreaker jacket over grey t-shirt] smiling calmly, nodding politely to another driver at red light. Peaceful composed expression, morning golden light, 4k 24fps.',
+        vietnamesePrompt: 'Trung cảnh qua cửa kính ô tô: Tuấn mỉm cười thanh thản, gật đầu chào tài xế bên cạnh khi dừng xe đợi đèn đỏ. Nét mặt thư thái, hoàn toàn không còn sự vội vã bốc đồng.',
+        firstFramePromptMidjourney: 'Medium shot of [28yo handsome Vietnamese man] smiling calmly behind steering wheel, peaceful daylight, natural cinematic lighting, 35mm --ar 16:9 --style raw --v 6.1',
+        recommendedModel: 'Kling 1.5',
+        motionScore: 3,
+      },
+      {
+        id: 22,
+        clipNumber: 22,
+        timeRange: '02:48 - 02:56',
+        durationSec: 8,
+        sceneReferenceId: 6,
+        title: 'Thông điệp vàng: Chậm 3 giây đèn đỏ - Trọn vẹn một đời an vui',
+        visualAction: 'Toàn cảnh flycam bay vút lên cao ngắm nhìn toàn cảnh thành phố rực rỡ trong nắng sớm, chữ thông điệp 3D phát sáng vàng sang trọng hiện lên giữa màn hình.',
+        audioVoiceover: '...mà là trở về nhà bình an bên những người ta yêu thương. Chậm 3 giây đèn đỏ - Trọn vẹn một đời an vui!',
+        charactersInvolved: [],
+        cameraMovement: 'Majestic aerial crane shot ascending high above the city skyline',
+        lightingMood: 'Brilliant morning sunbeams radiating across modern metropolis',
+        englishVideoPrompt: 'Breathtaking aerial drone ascension shot soaring high above modern city crossroads into the morning sky. Golden sun rays break through soft clouds illuminating the sprawling city. Golden 3D typography appears: "CHẬM 3 GIÂY ĐÈN ĐỎ - TRỌN VẸN MỘT ĐỜI AN VUI". Cinematic masterpiece ending, 8k.',
+        vietnamesePrompt: 'Đại cảnh Flycam bay vút lên trời xanh bao quát toàn cảnh thành phố tràn ngập ánh bình minh rạng rỡ. Dòng chữ thông điệp phát sáng trang trọng: "CHẬM 3 GIÂY ĐÈN ĐỎ - TRỌN VẸN MỘT ĐỜI AN VUI".',
+        firstFramePromptMidjourney: 'Spectacular aerial city view at sunrise, golden sunbeams cutting through clouds, majestic perspective of modern city, 8k cinematic wallpaper --ar 16:9 --style raw --v 6.1',
+        recommendedModel: 'Runway Gen-3 Alpha',
+        motionScore: 6,
+      },
     ],
   },
 };
 
 /**
- * Helper to dynamically generate an 8-second breakdown for any script
+ * Helper to dynamically generate an 8-second breakdown strictly reflecting any script's topic, scenes, characters, and settings
  */
 export function generateDefault8sBreakdownForScript(script: VideoScript): EightSecondBreakdown {
-  const primaryChar = script.characters[0] || { name: 'Nhân vật chính', role: 'Người tham gia giao thông', costume: 'Trang phục đời thường' };
-  
-  const charAnchor: EightSecondBreakdown['characterAnchors'][0] = {
-    id: 'char-main',
-    name: primaryChar.name,
-    role: primaryChar.role,
-    appearanceAnchor: `28-32yo Vietnamese character, realistic skin texture, modern clean hairstyle, authentic natural facial expressions.`,
-    clothingAnchor: primaryChar.costume || 'Modern commuter outfit, jacket over t-shirt, wearing watch.',
-    masterPromptToken: `[Vietnamese character ${primaryChar.name}, ${primaryChar.costume}]`,
-    negativePrompt: 'deformed face, changing clothes, cartoon, 3d render, anime, inconsistent haircut, double heads, extra fingers',
-  };
+  const characters = (script.characters && script.characters.length > 0)
+    ? script.characters
+    : [{ name: 'Nhân vật chính', role: 'Nhân vật dẫn dắt câu chuyện', costume: 'Trang phục phù hợp bối cảnh thực tế' }];
 
-  const objectAnchor: EightSecondBreakdown['objectAnchors'][0] = {
-    name: 'Phương tiện & Bối cảnh',
-    promptAnchor: 'Modern Vietnamese urban street with clear road markings, traffic light gantry, and authentic city atmosphere.',
-  };
+  const characterAnchors: EightSecondBreakdown['characterAnchors'] = characters.slice(0, 3).map((char, cIdx) => ({
+    id: `char-anchor-${cIdx + 1}`,
+    name: char.name,
+    role: char.role,
+    appearanceAnchor: `Vietnamese character, authentic skin texture, realistic expressions, neatly styled hair.`,
+    clothingAnchor: char.costume || 'Appropriate realistic outfit suited for the scene environment.',
+    masterPromptToken: `[Vietnamese actor ${char.name}, ${char.costume || 'in authentic wardrobe'}]`,
+    negativePrompt: 'deformed face, changing clothes, cartoon, 3d render, anime, inconsistent haircut, double heads, extra fingers, plastic skin',
+  }));
+
+  const locations = script.propsLocations?.locations || ['Bối cảnh thực tế điện ảnh'];
+  const props = script.propsLocations?.props || ['Đạo cụ chuyên dụng'];
+
+  const objectAnchors: EightSecondBreakdown['objectAnchors'] = [
+    {
+      name: locations[0] || 'Bối cảnh chính',
+      promptAnchor: `Authentic cinematic setting: ${locations.slice(0, 2).join(', ')}, detailed realistic environment lighting and depth.`,
+    },
+    {
+      name: props[0] || 'Đạo cụ then chốt',
+      promptAnchor: `Key story props: ${props.slice(0, 2).join(', ')}, highly detailed texture and photorealistic presence.`,
+    }
+  ];
 
   // Convert scenes into 8s clips
   const clips: EightSecondBreakdown['clips'] = [];
   let clipCounter = 1;
 
-  script.scenes.forEach((sc, scIndex) => {
-    // Each scene gets split into 2-3 clips of 8 seconds
-    const splitCount = Math.max(2, Math.min(4, Math.ceil(sc.visualAction.length / 80)));
+  script.scenes.forEach((sc) => {
+    // Determine number of 8s clips based on scene duration/action length
+    const splitCount = Math.max(1, Math.min(3, Math.ceil(sc.visualAction.length / 90)));
     
     for (let i = 0; i < splitCount; i++) {
       const startSec = (clipCounter - 1) * 8;
@@ -362,19 +499,21 @@ export function generateDefault8sBreakdownForScript(script: VideoScript): EightS
       };
 
       const timeRange = `${formatTime(startSec)} - ${formatTime(endSec)}`;
-      const actionSlice = sc.visualAction.length > 100 
-        ? sc.visualAction.slice(i * 70, (i + 1) * 70) 
+      const actionSlice = sc.visualAction.length > 110 
+        ? sc.visualAction.slice(i * 90, (i + 1) * 90) 
         : sc.visualAction;
 
       const cameraMoves = [
-        'Slow dolly push-in on character',
-        'Dynamic medium tracking shot',
-        'First-person driver POV through windshield',
-        'Low-angle street camera capturing speed',
-        'Overhead top-down drone descending shot',
-        'Extreme close-up on intense facial reaction'
+        'Slow cinematic dolly push-in',
+        'Steady medium tracking shot',
+        'Wide panoramic establishing shot',
+        'Intense close-up capturing emotional reaction',
+        'Overhead high-angle perspective',
+        'Dynamic low-angle slow pan'
       ];
       const cameraMovement = cameraMoves[(clipCounter - 1) % cameraMoves.length];
+      const activeChar = characters[clipCounter % characters.length] || characters[0];
+      const activeAnchor = characterAnchors[clipCounter % characterAnchors.length] || characterAnchors[0];
 
       clips.push({
         id: clipCounter,
@@ -382,15 +521,15 @@ export function generateDefault8sBreakdownForScript(script: VideoScript): EightS
         timeRange,
         durationSec: 8,
         sceneReferenceId: sc.id,
-        title: `Phân đoạn ${clipCounter}: ${sc.setting.slice(0, 35)}...`,
+        title: `Phân đoạn 8s #${clipCounter}: ${sc.setting.slice(0, 32)}`,
         visualAction: `(8 giây) ${actionSlice}`,
-        audioVoiceover: i === 0 ? sc.voiceoverNarration.slice(0, 90) : (sc.actorDialogue || sc.voiceoverNarration.slice(90, 180)),
-        charactersInvolved: [primaryChar.name],
+        audioVoiceover: i === 0 && sc.actorDialogue ? sc.actorDialogue : (sc.voiceoverNarration ? sc.voiceoverNarration.slice(0, 110) : ''),
+        charactersInvolved: [activeChar.name],
         cameraMovement,
-        lightingMood: 'Cinematic natural sunlight, realistic road reflections',
-        englishVideoPrompt: `Cinematic 35mm film shot, ${charAnchor.masterPromptToken} in ${sc.setting}. Action: ${sc.visualAction.slice(0, 120)}. Camera movement: ${cameraMovement}. Natural lighting, photorealistic, 4K UHD, 24fps motion blur --no cartoon, anime, 3D render, deformed limbs`,
-        vietnamesePrompt: `Cảnh phim 35mm điện ảnh, ${primaryChar.name} tại bối cảnh ${sc.setting}. Hành động: ${actionSlice}. Góc máy: ${cameraMovement}. Ánh sáng tự nhiên, 4K 24fps.`,
-        firstFramePromptMidjourney: `Cinematic 35mm film still, ${charAnchor.masterPromptToken} at ${sc.setting}, cinematic lighting, photorealistic, 8k --ar 16:9 --style raw --v 6.1`,
+        lightingMood: `Cinematic natural lighting in ${sc.setting}, high color depth`,
+        englishVideoPrompt: `Cinematic 35mm film shot, ${activeAnchor.masterPromptToken} at ${sc.setting}. Visual action: ${actionSlice}. Camera: ${cameraMovement}. Natural atmospheric lighting, 4K UHD, 24fps motion blur --no cartoon, anime, 3D render, deformed anatomy`,
+        vietnamesePrompt: `Cảnh quay 35mm điện ảnh, ${activeChar.name} tại bối cảnh "${sc.setting}". Hành động: ${actionSlice}. Góc máy: ${cameraMovement}. Ánh sáng tự nhiên, 4K 24fps.`,
+        firstFramePromptMidjourney: `Cinematic 35mm film still, ${activeAnchor.masterPromptToken} in ${sc.setting}, cinematic atmosphere, natural lighting, photorealistic, 8k --ar 16:9 --style raw --v 6.1`,
         recommendedModel: (clipCounter % 2 === 0 ? 'Kling 1.5' : 'Runway Gen-3 Alpha') as any,
         motionScore: 6,
       });
@@ -404,10 +543,10 @@ export function generateDefault8sBreakdownForScript(script: VideoScript): EightS
     scriptTitle: script.title,
     totalClips: clips.length,
     totalDurationSeconds: clips.length * 8,
-    characterAnchors: [charAnchor],
-    objectAnchors: [objectAnchor],
-    globalStylePrompt: 'Cinematic 35mm film, shot on ARRI Alexa LF, natural cinematic lighting, highly detailed photorealism, 4K UHD, 24fps motion blur',
-    globalNegativePrompt: 'cartoon, CGI, 3D animation, deformed hands, warped car body, shifting clothes, changing actor face',
+    characterAnchors,
+    objectAnchors,
+    globalStylePrompt: `Cinematic 35mm film, shot on ARRI Alexa LF, natural cinematic lighting suited for "${script.title}", highly detailed photorealism, 4K UHD, 24fps motion blur`,
+    globalNegativePrompt: 'cartoon, CGI, 3D animation, deformed hands, warped faces, shifting clothes, changing actor face, watermark, blur',
     clips,
   };
 }
