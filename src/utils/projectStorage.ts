@@ -1,49 +1,67 @@
 import { FilmProject, VideoScript, VideoGenre, ScriptScene } from '../types/script';
 import { CURATED_SCRIPTS } from '../data/videoScripts';
 
-const STORAGE_KEY_PROJECTS = 'film_ai_projects_v2';
-const STORAGE_KEY_ACTIVE_ID = 'film_ai_active_project_id_v2';
+const STORAGE_KEY_PROJECTS = 'film_ai_cinema_studio_projects_v4';
+const STORAGE_KEY_ACTIVE_ID = 'film_ai_cinema_studio_active_id_v4';
 
 export function createDefaultProjects(): FilmProject[] {
+  const detectiveScript = CURATED_SCRIPTS.find(s => s.id === 'script-detective-mystery') || CURATED_SCRIPTS[0];
+  const scifiScript = CURATED_SCRIPTS.find(s => s.id === 'script-scifi-cyberpunk') || CURATED_SCRIPTS[1];
+  const tvcScript = CURATED_SCRIPTS.find(s => s.id === 'script-tvc-coffee') || CURATED_SCRIPTS[2];
+  const trafficScript = CURATED_SCRIPTS.find(s => s.id === 'script-drama-3min') || CURATED_SCRIPTS[3];
+
   return [
     {
-      id: 'proj-traffic-1',
-      name: 'Dự Án 1: Chậm 3 Giây - Nhanh Một Đời (Tiểu Phẩm Cảnh Báo)',
-      topic: 'Người lái xe vội vã vượt đèn đỏ tại ngã tư và bài học cảnh tỉnh suýt đánh đổi cả mạng sống',
-      genre: 'drama_psa',
+      id: 'proj-detective-1',
+      name: 'Dự Án 1: Vết Dấu Nửa Đêm (Trinh Thám & Giật Gân)',
+      topic: 'Vụ án chiếc đồng hồ cổ chạy giật lùi tại biệt thự cổ Hà Nội, thám tử tư giải mã bí mật gia tộc',
+      genre: 'action_thriller',
       duration: '3min',
-      tone: 'Căng thẳng, dồn dập, giật mình thức tỉnh, kết thúc nhân văn',
-      customAudience: 'Người điều khiển xe máy, ô tô, thanh niên và tài xế công nghệ',
-      customSetting: 'Trong cabin ô tô & Ngã tư giao lộ trung tâm',
-      script: CURATED_SCRIPTS[0],
+      tone: 'Hồi hộp, bí ẩn, ly kỳ, cú lật bất ngờ, ánh sáng chiaroscuro điện ảnh',
+      customAudience: 'Khán giả mê phim trinh thám, suy luận logic, phá án hình sự',
+      customSetting: 'Biệt thự cổ bên hồ Tây vào đêm mưa & căn hầm bí mật',
+      script: detectiveScript,
       createdAt: Date.now() - 86400000 * 3,
       updatedAt: Date.now() - 86400000 * 3,
     },
     {
       id: 'proj-scifi-2',
       name: 'Dự Án 2: Thành Phố 2088 (Sci-Fi Tương Lai)',
-      topic: 'Cyberpunk Neo-Saigon năm 2088, trạm lưu trữ ký ức số và hacker giải mã bí mật tập đoàn',
+      topic: 'Cyberpunk Neo-Saigon năm 2088, trạm lưu trữ ký ức số và kỹ sư giải mã dữ liệu sinh học cuối cùng',
       genre: 'scifi_cyberpunk',
-      duration: '2min',
+      duration: '3min',
       tone: 'Huyền ảo, vị lai, công nghệ cao, dồn dập',
       customAudience: 'Khán giả trẻ mê phim khoa học viễn tưởng & công nghệ AI',
       customSetting: 'Khu phố ngập ánh đèn neon và trạm tàu đệm từ trên cao',
-      script: CURATED_SCRIPTS[1] || CURATED_SCRIPTS[0],
+      script: scifiScript,
       createdAt: Date.now() - 86400000 * 2,
       updatedAt: Date.now() - 86400000 * 2,
     },
     {
       id: 'proj-tvc-3',
       name: 'Dự Án 3: TVC Cà Phê Mộc Cao Nguyên',
-      topic: 'TVC quảng cáo cà phê mộc nguyên bản, tôn vinh giọt đắng đánh thức khát vọng khởi nghiệp',
+      topic: 'TVC quảng cáo cà phê mộc nguyên bản Cầu Đất, tôn vinh giọt đắng đánh thức khát vọng khởi nghiệp',
       genre: 'tvc_commercial',
       duration: '60s',
       tone: 'Hào sảng, truyền cảm hứng, hình ảnh điện ảnh duy mỹ',
       customAudience: 'Dân văn phòng, giới trẻ năng động, người yêu cà phê',
       customSetting: 'Nông trại cà phê Đắk Lắk trong sương sớm & không gian quán sáng tạo',
-      script: CURATED_SCRIPTS[2] || CURATED_SCRIPTS[0],
+      script: tvcScript,
       createdAt: Date.now() - 86400000,
       updatedAt: Date.now() - 86400000,
+    },
+    {
+      id: 'proj-traffic-4',
+      name: 'Dự Án 4: Chậm 3 Giây - Nhanh Một Đời (Cảnh Báo An Toàn)',
+      topic: 'Người lái xe vội vã vượt đèn đỏ tại ngã tư và bài học cảnh tỉnh suýt đánh đổi cả mạng sống',
+      genre: 'drama_psa',
+      duration: '3min',
+      tone: 'Căng thẳng, dồn dập, giật mình thức tỉnh, kết thúc nhân văn',
+      customAudience: 'Người điều khiển phương tiện, thanh niên và tài xế công nghệ',
+      customSetting: 'Trong cabin ô tô & Ngã tư giao lộ trung tâm',
+      script: trafficScript,
+      createdAt: Date.now() - 43200000,
+      updatedAt: Date.now() - 43200000,
     },
   ];
 }

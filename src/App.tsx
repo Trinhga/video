@@ -65,7 +65,7 @@ export default function App() {
 
   // Create new project
   const handleCreateNewProject = () => {
-    const newProj = createNewProject('', 'drama_psa');
+    const newProj = createNewProject('', 'drama');
     const updated = [newProj, ...projects];
     updateAndSaveProjects(updated, newProj.id);
     setActiveTab('generator');

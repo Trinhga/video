@@ -92,7 +92,7 @@ export interface EightSecondClip {
   englishVideoPrompt: string; // Prompt tiếng Anh tối ưu cho Runway Gen-3 / Kling AI / Sora / Luma
   vietnamesePrompt: string; // Prompt tiếng Việt
   firstFramePromptMidjourney: string; // Prompt tạo keyframe đầu (Image-to-Video Workflow)
-  recommendedModel: 'Runway Gen-3 Alpha' | 'Kling 1.5' | 'Luma Dream Machine' | 'Sora' | 'Hailuo Minimax';
+  recommendedModel: 'Runway Gen-3 Alpha' | 'Kling 2.6' | 'Kling 2.5' | 'Kling 1.5' | 'Luma Dream Machine' | 'Sora' | 'Hailuo Minimax' | 'Google Veo' | (string & {});
   motionScore: number; // Điểm chuyển động 1 - 10
 }
 

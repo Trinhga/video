@@ -810,13 +810,13 @@ Nhiệm vụ của bạn là nhận kịch bản phim/video và phân rã thành
 2. CHIA NHỎ TOÀN BỘ KỊCH BẢN THÀNH CÁC PHÂN ĐOẠN ĐÚNG 8 GIÂY (8-second clips):
    - Các clip nối tiếp nhau chính xác: Clip 1 (00:00 - 00:08), Clip 2 (00:08 - 00:16), Clip 3 (00:16 - 00:24)...
    - Mỗi clip 8 giây phải có:
-     * visualAction (tiếng Việt): Hành động cụ thể diễn ra trong 8 giây (đậm chất đường phố và giao thông Việt Nam).
-     * audioVoiceover (tiếng Việt): Lời thoại hoặc lời dẫn thuyết minh tuyên truyền an toàn giao thông ứng với 8 giây đó.
-     * cameraMovement: Góc máy & chuyển động camera (Slow dolly push-in, low angle tracking, FPV drone, macro close-up...).
-     * lightingMood: Ánh sáng bối cảnh đường phố Việt Nam (warm tropical daylight, golden hour, rainy asphalt reflections...).
-     * englishVideoPrompt: Prompt tiếng Anh chuẩn điện ảnh cho Kling 2.6 / Runway / Sora kết hợp Master Character Token + hành động 8s + bối cảnh giao thông Việt Nam + cinematic 35mm film, 4k 24fps.
+     * visualAction (tiếng Việt): Hành động điện ảnh cụ thể diễn ra trong 8 giây (phù hợp với thể loại, cốt truyện và bối cảnh của bộ phim).
+     * audioVoiceover (tiếng Việt): Lời thoại nhân vật hoặc lời dẫn thuyết minh ứng với 8 giây đó.
+     * cameraMovement: Góc máy & chuyển động camera (Slow dolly push-in, low angle tracking, FPV drone, macro close-up, rack focus...).
+     * lightingMood: Ánh sáng điện ảnh phù hợp bối cảnh (warm golden hour, dramatic chiaroscuro, cyberpunk neon, misty morning sunlight...).
+     * englishVideoPrompt: Prompt tiếng Anh chuẩn điện ảnh cho Kling 2.6 / Runway / Sora kết hợp Master Character Token + hành động 8s + bối cảnh Việt Nam chuẩn thể loại + cinematic 35mm film, ARRI Alexa LF, 4k 24fps.
      * vietnamesePrompt: Prompt tiếng Việt tương ứng.
-     * firstFramePromptMidjourney: Prompt tạo keyframe xuất phát bằng Midjourney/Flux cho kỹ thuật Image-to-Video (I2V) đậm chất Việt Nam.
+     * firstFramePromptMidjourney: Prompt tạo keyframe xuất phát bằng Midjourney/Flux cho kỹ thuật Image-to-Video (I2V) đậm chất điện ảnh.
      * recommendedModel: Kling 2.6 / Runway Gen-3 Alpha / Luma Dream Machine
      * motionScore: Điểm chuyển động từ 1 đến 10.
 
@@ -847,12 +847,12 @@ YÊU CẦU TRẢ VỀ DUY NHẤT 1 ĐỐI TƯỢNG JSON THEO SCHEMA DƯỚI ĐÂ
   ],
   "objectAnchors": [
     {
-      "name": "Phương tiện giao thông / Đạo cụ Việt Nam",
-      "promptAnchor": "Mô tả chi tiết phương tiện với biển số xe Việt Nam và mũ bảo hiểm"
+      "name": "Đạo cụ / Bối cảnh đặc trưng của phim",
+      "promptAnchor": "Mô tả chi tiết bối cảnh và đạo cụ mang dấu ấn văn hóa hoặc đời sống Việt Nam phù hợp kịch bản"
     }
   ],
-  "globalStylePrompt": "Cinematic 35mm film, shot on ARRI Alexa LF, natural cinematic lighting, highly detailed photorealism, authentic Vietnamese city atmosphere, motorbikes with helmets, Vietnamese license plates, 4K UHD, 24fps motion blur",
-  "globalNegativePrompt": "cartoon, CGI, 3D animation, oversaturated, western Caucasian pedestrians, foreign non-Vietnamese streets, foreign license plates, riders without helmets on motorbikes, deformed hands, warped objects, shifting clothes",
+  "globalStylePrompt": "Cinematic 35mm film, shot on ARRI Alexa LF, natural cinematic lighting, highly detailed photorealism, authentic Vietnamese setting, 4K UHD, 24fps motion blur",
+  "globalNegativePrompt": "cartoon, CGI, 3D animation, oversaturated, western Caucasian pedestrians, foreign non-Vietnamese signage, deformed hands, warped objects, shifting clothes, watermark",
   "clips": [
     {
       "id": 1,
@@ -865,10 +865,10 @@ YÊU CẦU TRẢ VỀ DUY NHẤT 1 ĐỐI TƯỢNG JSON THEO SCHEMA DƯỚI ĐÂ
       "audioVoiceover": "Lời thoại hoặc lời dẫn tương ứng trong 8s",
       "charactersInvolved": ["Tên nhân vật"],
       "cameraMovement": "Slow steady dolly push-in",
-      "lightingMood": "Cinematic Vietnam daylight",
-      "englishVideoPrompt": "Cinematic 35mm shot, set in Vietnam: [Master Character Token] action in 8 seconds, Vietnamese urban streetscape, Honda Wave scooter with helmets, Vietnamese vehicle license plates, camera movement, lighting, 4k 24fps photorealism",
-      "vietnamesePrompt": "Cảnh phim điện ảnh miêu tả hành động trong 8s tại đường phố Việt Nam.",
-      "firstFramePromptMidjourney": "Cinematic film still, set in Vietnam, [Master Character Token], Vietnamese street setting, lighting, photorealistic, 8k --ar 16:9 --style raw --v 6.1",
+      "lightingMood": "Cinematic Vietnam natural lighting",
+      "englishVideoPrompt": "Cinematic 35mm shot, set in Vietnam: [Master Character Token] action in 8 seconds, authentic Vietnamese setting, camera movement, lighting, 4k 24fps photorealism",
+      "vietnamesePrompt": "Cảnh phim điện ảnh miêu tả hành động trong 8s tại bối cảnh Việt Nam.",
+      "firstFramePromptMidjourney": "Cinematic film still, set in Vietnam, [Master Character Token], authentic Vietnamese setting, lighting, photorealistic, 8k --ar 16:9 --style raw --v 6.1",
       "recommendedModel": "Kling 2.6",
       "motionScore": 5
     }
@@ -1204,28 +1204,31 @@ function enrichPromptForVietnameseContext(rawPrompt?: string, title?: string): s
 
   // Universal Vietnamese anchors applicable across ALL genres (TVC, Drama, Sci-Fi, Action, Comedy, etc.)
   const vnUniversalAnchor = 
-    "Set in Vietnam. Authentic Vietnamese people with East Asian facial features and natural Vietnamese styling, authentic Vietnamese setting and architecture with Vietnamese language signage, authentic Vietnamese vehicle license plates (white plate with black digits) on motorbikes and cars, cinematic 35mm film, ARRI Alexa LF, 4k 24fps photorealism";
+    "Set in Vietnam. Authentic Vietnamese people with East Asian facial features and natural Vietnamese styling, authentic Vietnamese setting and architecture, cinematic 35mm film, ARRI Alexa LF, 4k 24fps photorealism";
 
   if (!hasVn) {
     text = `${text}. ${vnUniversalAnchor}.`;
-  } else {
-    // If it already mentions Vietnam, verify and reinforce missing key cultural / visual anchors
-    const missing: string[] = [];
-    if (!lower.includes("people") && !lower.includes("person") && !lower.includes("người") && !lower.includes("man") && !lower.includes("woman")) {
-      missing.push("authentic Vietnamese people with realistic Asian features");
-    }
-    if ((lower.includes("car") || lower.includes("vehicle") || lower.includes("scooter") || lower.includes("motorcycle") || lower.includes("motorbike") || lower.includes("xe")) && !lower.includes("license plate") && !lower.includes("biển số")) {
+  }
+
+  // Reinforce specific Vietnamese elements based on scene contents
+  const missing: string[] = [];
+  const mentionsVehicles = lower.includes("car") || lower.includes("vehicle") || lower.includes("scooter") || lower.includes("motorcycle") || lower.includes("motorbike") || lower.includes("xe");
+  
+  if (mentionsVehicles) {
+    if (!lower.includes("license plate") && !lower.includes("biển số")) {
       missing.push("authentic Vietnamese vehicle license plates (white plate with black digits)");
     }
     if ((lower.includes("motorcycle") || lower.includes("scooter") || lower.includes("motorbike") || lower.includes("xe máy")) && !lower.includes("helmet") && !lower.includes("mũ")) {
       missing.push("riders wearing certified motorcycle helmets");
     }
-    if (!lower.includes("sign") && !lower.includes("storefront") && !lower.includes("biển hiệu")) {
-      missing.push("signage and storefronts with Vietnamese language text");
-    }
-    if (missing.length > 0) {
-      text = `${text}, ${missing.join(", ")}`;
-    }
+  }
+
+  if ((lower.includes("street") || lower.includes("shop") || lower.includes("storefront") || lower.includes("sign") || lower.includes("quán") || lower.includes("phố")) && !lower.includes("vietnamese language") && !lower.includes("tiếng việt")) {
+    missing.push("Vietnamese language signage and environmental details");
+  }
+
+  if (missing.length > 0) {
+    text = `${text}, ${missing.join(", ")}`;
   }
 
   return text.slice(0, 2000);

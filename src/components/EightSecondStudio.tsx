@@ -83,14 +83,8 @@ export const EightSecondStudio: React.FC<EightSecondStudioProps> = ({
   onNavigateToVideo,
   onNavigateToCameraAngles,
 }) => {
-  const isOriginalTrafficScript = 
-    script.id === 'script-drama-3min' && 
-    (script.title.includes('Chậm 3 Giây') || script.title.includes('Giao Thông'));
-
   const [breakdown, setBreakdown] = useState<EightSecondBreakdown>(() => {
-    return (isOriginalTrafficScript && CURATED_8S_BREAKDOWNS[script.id])
-      ? CURATED_8S_BREAKDOWNS[script.id]
-      : generateDefault8sBreakdownForScript(script);
+    return CURATED_8S_BREAKDOWNS[script.id] || generateDefault8sBreakdownForScript(script);
   });
 
   const [copiedId, setCopiedId] = useState<string | null>(null);
@@ -171,12 +165,9 @@ export const EightSecondStudio: React.FC<EightSecondStudioProps> = ({
 
   // Update breakdown when script prop changes
   useEffect(() => {
-    const isOriginalTraffic = 
-      script.id === 'script-drama-3min' && 
-      (script.title.includes('Chậm 3 Giây') || script.title.includes('Giao Thông'));
-
-    if (isOriginalTraffic && CURATED_8S_BREAKDOWNS[script.id]) {
-      setBreakdown(CURATED_8S_BREAKDOWNS[script.id]);
+    const found = CURATED_8S_BREAKDOWNS[script.id];
+    if (found) {
+      setBreakdown(found);
     } else {
       setBreakdown(generateDefault8sBreakdownForScript(script));
     }
