@@ -706,7 +706,7 @@ export const EightSecondStudio: React.FC<EightSecondStudioProps> = ({
       {/* TAB 1: 8-SECOND TIMELINE & READY-TO-GENERATE VIDEOS */}
       {activeTab === 'timeline' && (
         <div className="flex flex-col gap-4">
-          {/* Vietnam Traffic Law Propaganda Standards Banner */}
+          {/* Universal Vietnam Context Standards Banner (Across All Genres) */}
           <div className="bg-gradient-to-r from-red-950/40 via-amber-950/30 to-slate-900 border-2 border-red-500/50 rounded-2xl p-4 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-red-600 to-amber-500 flex items-center justify-center text-white shrink-0 shadow-md">
@@ -715,17 +715,17 @@ export const EightSecondStudio: React.FC<EightSecondStudioProps> = ({
               <div>
                 <div className="flex items-center gap-2 flex-wrap">
                   <h4 className="text-sm font-bold text-white flex items-center gap-1.5">
-                    <span>Chuẩn Bối Cảnh Tuyên Truyền Luật Giao Thông Việt Nam</span>
+                    <span>Chuẩn Hóa 100% Bản Sắc & Bối Cảnh Việt Nam (Mọi Thể Loại & Lĩnh Vực)</span>
                   </h4>
                   <span className="text-[10px] px-2 py-0.5 rounded-full bg-red-500/20 text-red-300 border border-red-500/40 font-bold">
-                    QCVN 41:2019/BGTVT
+                    TVC • Phim Ảnh • Drama • Đời Sống
                   </span>
                   <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold">
                     Khóa Chặt 100% Việt Nam
                   </span>
                 </div>
                 <p className="text-xs text-slate-300 mt-0.5 leading-relaxed">
-                  Tất cả các prompt video đều được tích hợp đầy đủ: <strong className="text-amber-300">Con người Việt Nam</strong> (gương mặt, dáng vóc Á Đông) • <strong className="text-amber-300">Khung cảnh đường phố VN</strong> • <strong className="text-amber-300">Xe máy & Mũ bảo hiểm cài quai</strong> • <strong className="text-amber-300">Biển số xe Việt Nam</strong> • <strong className="text-amber-300">Biển báo & CSGT sắc phục vàng rơm</strong>.
+                  Tất cả các prompt video (Kling AI, Veo, Runway, Luma) trên mọi lĩnh vực đều được khóa chặt: <strong className="text-amber-300">Con người Việt Nam</strong> (gương mặt, dáng vóc Á Đông) • <strong className="text-amber-300">Khung cảnh & Kiến trúc VN</strong> • <strong className="text-amber-300">Ngôn ngữ & Biển hiệu VN</strong> • <strong className="text-amber-300">Phương tiện & Biển số xe VN</strong>.
                 </p>
               </div>
             </div>
@@ -910,8 +910,8 @@ export const EightSecondStudio: React.FC<EightSecondStudioProps> = ({
                                   onClick={() => {
                                     const curEng = editClipForm.englishVideoPrompt || '';
                                     const curVn = editClipForm.vietnamesePrompt || '';
-                                    const vnEngAnchor = 'Set in Vietnam traffic law propaganda. Authentic Vietnamese people, realistic Vietnam urban street, Honda Wave scooter with riders wearing certified Vietnamese helmets with chinstraps fastened, authentic Vietnamese vehicle license plates (white plate with black digits), official Vietnamese traffic signs (QCVN 41), cinematic 35mm film, ARRI Alexa LF, 4k 24fps photorealism';
-                                    const vnVnAnchor = 'Bối cảnh tuyên truyền luật an toàn giao thông Việt Nam, người Việt Nam, đường phố Việt Nam, xe máy Honda Wave đội mũ bảo hiểm cài quai đúng quy cách, biển số xe Việt Nam nền trắng chữ đen, biển báo QCVN 41';
+                                    const vnEngAnchor = 'Set in Vietnam. Authentic Vietnamese people with East Asian facial features, realistic Vietnam setting with Vietnamese language signage and architecture, authentic Vietnamese vehicle license plates (white plate with black digits), cinematic 35mm film, ARRI Alexa LF, 4k 24fps photorealism';
+                                    const vnVnAnchor = 'Bối cảnh Việt Nam, con người Việt Nam, không gian và biển hiệu chữ tiếng Việt, phương tiện và biển số xe chuẩn Việt Nam';
                                     
                                     setEditClipForm({
                                       ...editClipForm,
@@ -920,10 +920,10 @@ export const EightSecondStudio: React.FC<EightSecondStudioProps> = ({
                                     });
                                   }}
                                   className="px-2.5 py-0.5 rounded bg-red-600/30 hover:bg-red-600/50 border border-red-500/50 text-red-200 text-[10px] font-bold flex items-center gap-1 cursor-pointer transition-colors"
-                                  title="Tự động chèn các thông số chuẩn hóa giao thông Việt Nam vào prompt"
+                                  title="Tự động chèn các thông số chuẩn hóa bối cảnh Việt Nam vào prompt"
                                 >
                                   <span>🇻🇳</span>
-                                  <span>Nạp Chuẩn Giao Thông VN</span>
+                                  <span>Nạp Chuẩn Bối Cảnh VN</span>
                                 </button>
                               </div>
                               <textarea

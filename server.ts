@@ -337,7 +337,7 @@ LƯU Ý QUAN TRỌNG:
 1. Số phân cảnh (scenes) phải từ 4 đến 6 phân cảnh, phân bổ thời gian hợp lý theo thời lượng "${duration || "3 phút"}".
 2. Hành động diễn xuất (visualAction) phải giàu tính thị giác điện ảnh (visual storytelling) để đạo diễn và tổ quay phim có thể bấm máy ghi hình ngay lập tức hoặc đưa vào AI Video generation.
 3. Lời thoại (actorDialogue) và lời dẫn (voiceoverNarration) bằng tiếng Việt tự nhiên, cuốn hút, phù hợp với phong cách của thể loại đã chọn.
-4. ĐẶC BIỆT VỀ BẢN SẮC & PHÁP LUẬT GIAO THÔNG VIỆT NAM: Nếu chủ đề liên quan đến giao thông, an toàn giao thông hoặc cảnh báo xã hội: Toàn bộ bối cảnh phải là đường phố Việt Nam, 100% nhân vật là người Việt Nam, phương tiện đặc trưng Việt Nam (xe máy Honda Wave, ô tô biển số Việt Nam, 100% đội mũ bảo hiểm có cài quai), biển báo giao thông quy chuẩn QCVN 41:2019/BGTVT Việt Nam, lực lượng Cảnh sát Giao thông (CSGT) Việt Nam sắc phục vàng rơm.`;
+4. ĐẶC BIỆT VỀ BẢN SẮC & BỐI CẢNH VIỆT NAM TRÊN MỌI THỂ LOẠI & LĨNH VỰC: Bất kể kịch bản thuộc thể loại nào (TVC thương mại, Phim ngắn tâm lý, Khoa học viễn tưởng, Trinh thám, Kinh dị, Hài hước, Gia đình, Công nghệ, Giao thông...): Toàn bộ bối cảnh phải diễn ra tại Việt Nam, 100% nhân vật là người Việt Nam với lối sống và xưng hô tự nhiên, ngôn ngữ và biển hiệu chữ tiếng Việt, phương tiện và biển số xe chuẩn Việt Nam, phản ánh chân thực văn hóa và đời sống người Việt.`;
 
     const response = await ai.models.generateContent({
       model: "gemini-3.8-flash",
@@ -789,24 +789,19 @@ app.post("/api/generate-8s-breakdown", async (req, res) => {
   try {
     const prompt = `Bạn là Chuyên gia Đạo diễn Điện ảnh và Kỹ sư Prompt Video AI hàng đầu thế giới (Chuyên gia Runway Gen-3 Alpha, Kling 2.6, Luma Dream Machine, OpenAI Sora, Midjourney v6.1 & Flux).
 
-QUY CHUẨN TỐI THƯỢNG (BẢN SẮC & PHÁP LUẬT GIAO THÔNG ĐƯỜNG BỘ VIỆT NAM):
-Đây là chuỗi video TUYÊN TRUYỀN PHÁP LUẬT VÀ AN TOÀN GIAO THÔNG TẠI VIỆT NAM. 
+QUY CHUẨN TỐI THƯỢNG (BẢN SẮC & BỐI CẢNH VIỆT NAM TRÊN MỌI THỂ LOẠI & LĨNH VỰC):
+Bộ phim/video này được thiết lập và sản xuất tại VIỆT NAM TRÊN TẤT CẢ CÁC LĨNH VỰC (TVC thương mại, Phim ngắn tâm lý, Khoa học viễn tưởng, Trinh thám, Kinh dị, Hài hước, Cổ trang/Dã sử, Tài liệu, Đời sống xã hội, Công nghệ, Giao thông, v.v.).
 VÌ THẾ MỌI THỨ TRONG TẤT CẢ PROMPT (englishVideoPrompt, vietnamesePrompt, firstFramePromptMidjourney, characterAnchors, visualAction, audioVoiceover) PHẢI LÀ VIỆT NAM 100%:
-1. CON NGƯỜI: 100% là người Việt Nam (authentic Vietnamese people, Asian facial features, trang phục đời sống thường nhật người Việt Nam như áo khoác gió, áo sơ mi, áo phông, áo chống nắng...).
-2. NGÔN NGỮ & KHẨU HIỆU: Lời thoại diễn viên, lời bình voiceover, khẩu hiệu tuyên truyền an toàn giao thông, biển hiệu cửa hàng đều bằng tiếng Việt chuẩn mực.
-3. KHUNG CẢNH & ĐƯỜNG PHỐ: Đường phố đô thị Việt Nam (Hà Nội, TP. Hồ Chí Minh, Đà Nẵng, giao lộ ngã tư, vạch kẻ sang đường cho người đi bộ, vạch dừng xe 7.1, vỉa hè lát gạch, hàng cây bóng mát, nhà ống đặc trưng Việt Nam).
-4. BIỂN BÁO & ĐÈN TÍN HIỆU: Biển báo giao thông theo quy chuẩn QCVN 41:2019/BGTVT Việt Nam (Biển cấm tròn viền đỏ, biển hiệu lệnh tròn xanh, biển nguy hiểm tam giác vàng viền đỏ, vạch mắt võng). Đèn tín hiệu giao thông 3 màu (Đỏ - Vàng - Xanh) có đồng hồ đếm ngược kỹ thuật số.
-5. PHƯƠNG TIỆN & BIỂN SỐ XE:
-   - Xe máy: Honda Wave Alpha, Honda Lead/Vision, Yamaha, xe máy điện VinFast.
-   - Ô tô, xe buýt, taxi Việt Nam (Mai Linh xanh lá, Xanh SM lục lam, Vinasun).
-   - BIỂN SỐ XE: Chuẩn biển số xe Việt Nam nền trắng chữ đen (ví dụ: 29B1-123.45, 51A-987.65, 30E-689.96).
-   - MŨ BẢO HIỂM: 100% người ngồi trên xe máy/xe đạp điện PHẢI đội mũ bảo hiểm đạt chuẩn Việt Nam có cài quai đúng quy cách.
-6. LỰC LƯỢNG CHẤP PHÁP: Cảnh sát Giao thông Việt Nam (CSGT) trong sắc phục màu vàng rơm đặc trưng của Bộ Công An Việt Nam, đội mũ kepi, đeo găng tay trắng, gậy chỉ huy giao thông sọc phản quang đen trắng.
-7. MỖI "englishVideoPrompt" BẮT BUỘC PHẢI CHỨA CÁC TỪ KHÓA BẢN SẮC:
-   - "Set in Vietnam: authentic Vietnamese [character], realistic Vietnam urban street setting"
-   - "motorbikes (Honda Wave, scooters) with certified helmets fastened"
-   - "Vietnamese vehicle license plates (white plate with black digits)"
-   - "official Vietnamese traffic signs, cinematic 35mm film, shot on ARRI Alexa LF, 4k 24fps photorealism"
+1. CON NGƯỜI: 100% là người Việt Nam (authentic Vietnamese people, đặc điểm khuôn mặt Á Đông Việt Nam, làn da tự nhiên, kiểu tóc hiện đại/truyền thống, phong thái và trang phục đời thường người Việt Nam phù hợp với thể loại).
+2. NGÔN NGỮ & CHỮ VIẾT: Mọi biển hiệu, bao bì sản phẩm, khẩu hiệu, màn hình hiển thị, chữ viết trên bối cảnh và lời thoại/voiceover 100% bằng tiếng Việt chuẩn mực.
+3. KHUNG CẢNH & KHÔNG GIAN: Địa điểm tại Việt Nam (đường phố Hà Nội, TP. Hồ Chí Minh, Đà Nẵng, cao ốc văn phòng, căn hộ, quán cà phê, nhà phố ống, làng quê, cảnh quan thiên nhiên Việt Nam).
+4. PHƯƠNG TIỆN & BIỂN SỐ XE: Phương tiện lưu hành tại Việt Nam (xe máy Honda Wave/Vision, xe điện VinFast, ô tô, taxi Mai Linh xanh lá/Xanh SM, xe buýt Việt Nam). Biển số xe chuẩn Việt Nam nền trắng chữ đen (ví dụ 29B1-123.45, 51A-987.65, 30E-689.96). Khi có người điều khiển xe máy trên đường, 100% PHẢI đội mũ bảo hiểm cài quai đúng cách.
+5. VĂN HÓA & ĐỜI SỐNG: Thói quen sinh hoạt, phong cách giao tiếp, ẩm thực, văn hóa ứng xử thực tế của người Việt Nam.
+6. MỖI "englishVideoPrompt" BẮT BUỘC PHẢI CHỨA CÁC TỪ KHÓA BẢN SẮC:
+   - "Set in Vietnam: authentic Vietnamese [character/action]..."
+   - "realistic Vietnam setting with Vietnamese language signage and architecture"
+   - "authentic Vietnamese vehicle license plates" (nếu có phương tiện trong cảnh)
+   - "cinematic 35mm film, shot on ARRI Alexa LF, 4k 24fps photorealism"
 
 Nhiệm vụ của bạn là nhận kịch bản phim/video và phân rã thành:
 1. BỘ NHẬN DIỆN ĐỒNG NHẤT NHÂN VẬT VIỆT NAM (Character Consistency Bible & Master Prompt Tokens):
@@ -1200,45 +1195,45 @@ app.get("/api/video/providers", (_req, res) => {
   });
 });
 
-// Helper: Ensure 100% authentic Vietnamese traffic law propaganda context in video prompts
-function enrichPromptForVietnameseTraffic(rawPrompt?: string, title?: string): string {
+// Helper: Ensure 100% authentic Vietnamese context across ALL fields and genres in video prompts
+function enrichPromptForVietnameseContext(rawPrompt?: string, title?: string): string {
   let text = (rawPrompt || title || "Cinematic 8-second sequence, photorealistic 4k 24fps motion blur, realistic lighting").trim();
 
   const lower = text.toLowerCase();
   const hasVn = lower.includes("vietnam") || lower.includes("vietnamese");
 
-  // Essential anchors for Vietnamese traffic law propaganda
-  const vnMandatoryContext = 
-    "Set in Vietnam for Vietnam Traffic Law propaganda. Authentic Vietnamese people with East Asian facial features, realistic Vietnam urban streetscape with Vietnamese storefront signs, motorbikes and scooters (Honda Wave, Vision) with riders wearing certified Vietnamese helmets with chinstraps fastened, authentic Vietnamese vehicle license plates (white background with black text), official Vietnamese traffic signage (QCVN 41:2019/BGTVT), Vietnamese traffic police (CSGT in khaki-yellow uniform), cinematic 35mm film, ARRI Alexa LF, 4k 24fps photorealism";
+  // Universal Vietnamese anchors applicable across ALL genres (TVC, Drama, Sci-Fi, Action, Comedy, etc.)
+  const vnUniversalAnchor = 
+    "Set in Vietnam. Authentic Vietnamese people with East Asian facial features and natural Vietnamese styling, authentic Vietnamese setting and architecture with Vietnamese language signage, authentic Vietnamese vehicle license plates (white plate with black digits) on motorbikes and cars, cinematic 35mm film, ARRI Alexa LF, 4k 24fps photorealism";
 
   if (!hasVn) {
-    text = `${text}. ${vnMandatoryContext}.`;
+    text = `${text}. ${vnUniversalAnchor}.`;
   } else {
-    // If it already mentions Vietnam, ensure key specific anchors are reinforced
-    const missingElements: string[] = [];
-    if (!lower.includes("license plate") && !lower.includes("biển số")) {
-      missingElements.push("authentic Vietnamese vehicle license plates (white background with black text)");
+    // If it already mentions Vietnam, verify and reinforce missing key cultural / visual anchors
+    const missing: string[] = [];
+    if (!lower.includes("people") && !lower.includes("person") && !lower.includes("người") && !lower.includes("man") && !lower.includes("woman")) {
+      missing.push("authentic Vietnamese people with realistic Asian features");
     }
-    if (!lower.includes("helmet") && (lower.includes("scooter") || lower.includes("motorcycle") || lower.includes("motorbike") || lower.includes("xe máy"))) {
-      missingElements.push("riders wearing certified Vietnamese motorcycle helmets with chinstraps fastened");
+    if ((lower.includes("car") || lower.includes("vehicle") || lower.includes("scooter") || lower.includes("motorcycle") || lower.includes("motorbike") || lower.includes("xe")) && !lower.includes("license plate") && !lower.includes("biển số")) {
+      missing.push("authentic Vietnamese vehicle license plates (white plate with black digits)");
     }
-    if (!lower.includes("sign") && !lower.includes("biển báo")) {
-      missingElements.push("official Vietnamese traffic signs (QCVN 41:2019)");
+    if ((lower.includes("motorcycle") || lower.includes("scooter") || lower.includes("motorbike") || lower.includes("xe máy")) && !lower.includes("helmet") && !lower.includes("mũ")) {
+      missing.push("riders wearing certified motorcycle helmets");
     }
-    if (!lower.includes("people") && !lower.includes("người")) {
-      missingElements.push("authentic Vietnamese people with realistic Asian features");
+    if (!lower.includes("sign") && !lower.includes("storefront") && !lower.includes("biển hiệu")) {
+      missing.push("signage and storefronts with Vietnamese language text");
     }
-    if (missingElements.length > 0) {
-      text = `${text}, ${missingElements.join(", ")}`;
+    if (missing.length > 0) {
+      text = `${text}, ${missing.join(", ")}`;
     }
   }
 
   return text.slice(0, 2000);
 }
 
-const VIETNAMESE_TRAFFIC_NEGATIVE_PROMPT = 
+const VIETNAMESE_UNIVERSAL_NEGATIVE_PROMPT = 
   "deformed, blurry, low quality, distorted, extra limbs, cartoon, 3D render, lowres, glitch, " +
-  "western Caucasian pedestrians, foreign non-Vietnamese streets, western American police uniform, foreign license plates, riders without helmets on motorbikes, fantasy vehicles, text overlay glitch";
+  "western Caucasian actors, foreign non-Vietnamese streets, foreign non-Vietnamese signage, foreign license plates, American/European architecture, fantasy nonsensical text, text overlay glitch";
 
 // API: Generate Video for an 8s clip
 app.post("/api/video/generate", async (req, res) => {
@@ -1260,8 +1255,8 @@ app.post("/api/video/generate", async (req, res) => {
     const safeClipId = Math.max(1, Math.min(22, clipNum));
     const reliableStreamUrl = `/api/video/stream/${safeClipId}`;
 
-    // Enrich prompt with authentic Vietnamese Traffic Law context
-    const enrichedPrompt = enrichPromptForVietnameseTraffic(prompt, title);
+    // Enrich prompt with authentic Vietnamese context across all fields
+    const enrichedPrompt = enrichPromptForVietnameseContext(prompt, title);
 
     // 0. Official Kling AI Developer API (https://kling.ai/dev/api-key)
     if (activeProvider === "kling_official") {
@@ -1297,7 +1292,7 @@ app.post("/api/video/generate", async (req, res) => {
             const payload: any = {
               model_name: modelToTry,
               prompt: enrichedPrompt,
-              negative_prompt: VIETNAMESE_TRAFFIC_NEGATIVE_PROMPT,
+              negative_prompt: VIETNAMESE_UNIVERSAL_NEGATIVE_PROMPT,
               mode: "std",
               aspect_ratio: "16:9",
               duration: "5",
@@ -1514,7 +1509,7 @@ app.post("/api/video/generate", async (req, res) => {
             },
             body: JSON.stringify({
               prompt: enrichedPrompt,
-              negative_prompt: VIETNAMESE_TRAFFIC_NEGATIVE_PROMPT,
+              negative_prompt: VIETNAMESE_UNIVERSAL_NEGATIVE_PROMPT,
               aspect_ratio: "16:9",
               duration: "5",
             }),
